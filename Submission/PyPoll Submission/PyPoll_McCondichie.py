@@ -5,9 +5,11 @@
 import csv
 import os
 
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
 # Files to load and output (update with correct file paths)
-importfile = ("Resources/election_data.csv")  # Input file path
-outputfile = ("analysis/election_analysis.txt")  # Output file path
+importfile = os.path.join("Resources/election_data.csv")  # Input file path
+outputfile = os.path.join("analysis/election_analysis.txt")  # Output file path
 
 # Initialize variables to track the election data
 total_votes = 0  # Track the total number of votes cast
@@ -61,3 +63,5 @@ Winner: {winner}
 
 """
     print(output, file=txt_file) 
+
+print(output) 

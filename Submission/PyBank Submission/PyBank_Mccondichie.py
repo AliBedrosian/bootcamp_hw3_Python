@@ -5,10 +5,12 @@
 import csv
 import os
 
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
 # Files to load and output (update with correct file paths)
-input_filepath = ('Resources/budget_data.csv')  # when parent folder open in Visual Studio Code
+input_filepath = os.path.join('Resources/budget_data.csv')  # when parent folder open in Visual Studio Code
   # Output file path
-output_file = ('analysis/budget_analysis.txt')
+output_file = os.path.join('analysis/budget_analysis.txt')
 
 # Define variables to track the financial data
 total_months = 0
@@ -80,3 +82,5 @@ Greatest Decrease in Profits: {least_month} (${least_change})
 
 # Print the output
     print(output, file=txt_file)
+
+print(output)     
